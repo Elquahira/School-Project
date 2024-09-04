@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Information Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #2980b9, #6dd5fa); /* Blue gradient background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .form-container h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #2980b9;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="number"],
+        .form-container input[type="date"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .form-container input[type="submit"],
+        .form-container button {
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .form-container input[type="submit"]:hover,
+        .form-container button:hover {
+            background-color: #1c5984;
+        }
+
+        .form-container button {
+            background-color: #ccc;
+            color: #333;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Room Information</h2>
+        <form action="add_room.php" method="POST">
+            <label for="room_id">Room ID:</label>
+            <input type="text" id="room_id" name="room_id" required>
+
+            <label for="hotel_code">Hotel Code:</label>
+            <input type="text" id="hotel_code" name="hotel_code" required>
+
+            <label for="room_type_id">Room Type ID:</label>
+            <input type="text" id="room_type_id" name="room_type_id" required>
+
+            <label for="total_no_of_days">Total Number of Days:</label>
+            <input type="number" id="total_no_of_days" name="total_no_of_days">
+
+            <label for="room_charge">Room Charge:</label>
+            <input type="number" id="room_charge" name="room_charge">
+
+            <label for="utility_charge">Utility Charge:</label>
+            <input type="number" id="utility_charge" name="utility_charge">
+
+            <label for="status">Status:</label>
+            <input type="text" id="status" name="status">
+
+            <label for="created_date">Created Date:</label>
+            <input type="date" id="created_date" name="created_date">
+
+            <label for="created_by">Created By:</label>
+            <input type="text" id="created_by" name="created_by">
+
+            <input type="submit" value="Submit">
+            <button type="button" onclick="history.back()">Back</button>
+        </form>
+    </div>
+</body>
+</html>

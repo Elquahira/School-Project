@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siritamu Survey</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 16px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        input[type="text"], input[type="email"], input[type="number"], input[type="date"], select, textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        textarea {
+            resize: vertical;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .checkbox {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Siritamu Survey</h1>
+
+    <form action="submit-survey" method="post">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Date of Visit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" name="name" placeholder="Enter your name" required></td>
+                    <td><input type="email" name="email" placeholder="Enter your email" required></td>
+                    <td><input type="text" name="phone" placeholder="Enter your phone number" required></td>
+                    <td><input type="date" name="visitDate" required></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Number of Times Visited or Received Service</th>
+                    <th>Rate Room Service (1 to 5)</th>
+                    <th>Rate Front Desk Service (1 to 5)</th>
+                    <th>Rate Housekeeping (1 to 5)</th>
+                    <th>Rate Dining Experience (1 to 5)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="number" name="times" min="1" placeholder="Enter number of times" required></td>
+                    <td>
+                        <select name="roomServiceRating" required>
+                            <option value="" disabled selected>Select a rating</option>
+                            <option value="1">1 - Poor</option>
+                            <option value="2">2 - Fair</option>
+                            <option value="3">3 - Good</option>
+                            <option value="4">4 - Very Good</option>
+                            <option value="5">5 - Excellent</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select name="frontDeskRating" required>
+                            <option value="" disabled selected>Select a rating</option>
+                            <option value="1">1 - Poor</option>
+                            <option value="2">2 - Fair</option>
+                            <option value="3">3 - Good</option>
+                            <option value="4">4 - Very Good</option>
+                            <option value="5">5 - Excellent</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select name="housekeepingRating" required>
+                            <option value="" disabled selected>Select a rating</option>
+                            <option value="1">1 - Poor</option>
+                            <option value="2">2 - Fair</option>
+                            <option value="3">3 - Good</option>
+                            <option value="4">4 - Very Good</option>
+                            <option value="5">5 - Excellent</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select name="diningRating" required>
+                            <option value="" disabled selected>Select a rating</option>
+                            <option value="1">1 - Poor</option>
+                            <option value="2">2 - Fair</option>
+                            <option value="3">3 - Good</option>
+                            <option value="4">4 - Very Good</option>
+                            <option value="5">5 - Excellent</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>How likely are you to recommend our hotel? (1 to 10)</th>
+                    <th>Comments (Liked/Disliked Services)</th>
+                    <th>Suggestions for Improvement</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="number" name="recommendation" min="1" max="10" placeholder="Enter a number from 1 to 10" required></td>
+                    <td><textarea name="comments" placeholder="Write your comments here..." rows="4" required></textarea></td>
+                    <td><textarea name="suggestions" placeholder="Any suggestions for improvement?" rows="4" required></textarea></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="checkbox">
+            <label><input type="checkbox" name="privacyAgreement" required> I agree to the privacy policy</label>
+        </div>
+
+        <input type="submit" value="Submit Survey">
+    </form>
+
+</body>
+</html>

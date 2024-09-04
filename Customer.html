@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Information Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #2980b9, #6dd5fa);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 400px; /* Reduced max-width */
+            width: 100%;
+        }
+        .form-container h2 {
+            color: #2980b9;
+            margin-bottom: 10px;
+            font-size: 18px; /* Reduced font size */
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 4px;
+            font-weight: bold;
+            font-size: 14px; /* Reduced font size */
+        }
+        .form-container input {
+            width: 100%;
+            padding: 6px;
+            margin-bottom: 6px; /* Reduced margin-bottom */
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px; /* Reduced font size */
+        }
+        .form-container input[type="submit"],
+        .form-container button {
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            padding: 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px; /* Reduced font size */
+        }
+        .form-container input[type="submit"]:hover,
+        .form-container button:hover {
+            background-color: #1c5984;
+        }
+        .form-container button {
+            background-color: #ccc;
+            color: #333;
+            margin-left: 5px; /* Reduced margin-left */
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Customer Information</h2>
+        <form action="add_customer.php" method="POST">
+            <label for="customer_name">Customer Name:</label>
+            <input type="text" id="customer_name" name="customer_name" required>
+
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" required>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="post_code">Post Code:</label>
+            <input type="text" id="post_code" name="post_code">
+
+            <label for="mobile_number">Mobile Number:</label>
+            <input type="text" id="mobile_number" name="mobile_number" required>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="identity_type">Identity Type:</label>
+            <input type="text" id="identity_type" name="identity_type" required>
+
+            <label for="status">Status:</label>
+            <input type="text" id="status" name="status" required>
+
+            <label for="gender">Gender:</label>
+            <input type="text" id="gender" name="gender" required>
+
+            <label for="maritual_status">Marital Status:</label>
+            <input type="text" id="maritual_status" name="maritual_status" required>
+
+            <label for="created_date">Created Date:</label>
+            <input type="date" id="created_date" name="created_date" required>
+
+            <label for="created_by">Created By:</label>
+            <input type="text" id="created_by" name="created_by" required>
+
+            <input type="submit" value="Submit">
+            <button type="button" onclick="history.back()">Back</button>
+        </form>
+    </div>
+</body>
+</html>

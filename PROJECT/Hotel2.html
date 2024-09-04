@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Management System</title>
+    <style>
+        form {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin: 8px 0 4px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+        }
+        textarea {
+            resize: vertical;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hotel Management System Data Entry</h1>
+
+        <!-- DEPT_INFO Form -->
+        <h2>Department Information</h2>
+        <form action="/add_dept_info" method="POST">
+            <label for="dept_id">Department ID:</label>
+            <input type="text" id="dept_id" name="dept_id" required>
+
+            <label for="dept_name">Department Name:</label>
+            <input type="text" id="dept_name" name="dept_name" required>
+
+            <label for="dept_desc">Department Description:</label>
+            <textarea id="dept_desc" name="dept_desc" rows="4" required></textarea>
+
+            <label for="status">Status:</label>
+            <input type="text" id="status" name="status" required>
+
+            <label for="created_date">Created Date:</label>
+            <input type="date" id="created_date" name="created_date" required>
+
+            <label for="created_by">Created By:</label>
+            <input type="text" id="created_by" name="created_by" required>
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <!-- JOB_INFO Form -->
+        <h2>Job Information</h2>
+        <form action="/add_job_info" method="POST">
+            <label for="job_id">Job ID:</label>
+            <input type="text" id="job_id" name="job_id" required>
+
+            <label for="job_title">Job Title:</label>
+            <input type="text" id="job_title" name="job_title" required>
+
+            <label for="status">Status:</label>
+            <input type="text" id="status" name="status">
+
+            <label for="created_by">Created By:</label>
+            <input type="text" id="created_by" name="created_by">
+
+            <label for="created_date">Created Date:</label>
+            <input type="date" id="created_date" name="created_date">
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <!-- HOTEL Form -->
+        <h2>Hotel Information</h2>
+        <form action="/add_hotel" method="POST">
+            <label for="hotel_code">Hotel Code:</label>
+            <input type="text" id="hotel_code" name="hotel_code" required>
+
+            <label for="emp_id">Employee ID:</label>
+            <input type="text" id="emp_id" name="emp_id">
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location">
+
+            <label for="last_date">Last Date:</label>
+            <input type="date" id="last_date" name="last_date">
+
+            <label for="hotel_name">Hotel Name:</label>
+            <input type="text" id="hotel_name" name="hotel_name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+
+            <label for="status">Status:</label>
+            <input type="text" id="status" name="status">
+
+            <label for="created_date">Created Date:</label>
+            <input type="date" id="created_date" name="created_date">
+
+            <label for="created_by">Created By:</label>
+            <input type="text" id="created_by" name="created_by">
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <!-- ROOM Form -->
+        <h2>Room Information</h2>
+        <form action="/add_room" method="POST">
+            <label for="room_id">Room ID:</label>
+            <input type="text" id="room_id" name="room_id" required>
+
+            <label for="hotel_code">Hotel Code:</label>
+            <input type="text" id="hotel_code" name="hotel_code" required>
+
+            <label for="room_type_id">Room Type ID:</label>
+            <input type="text" id="room_type_id" name="room_type_id" required>
+
+            <label for="total_no_of_days">Total Number of Days:</label>
+            <input type="number" id="total_no_of_days" name="total_no_of_days">
+
+            <label for="room_charge">Room Charge:</label>
+            <input type="number" id="room_charge" name="room_charge">
+
+            <label for="utility_charge">Utility Charge:</label>
+            <input type="number" id="utility_charge" name="utility_charge">
+
+            <label for="status">Status:</label>
+            <input type="text" id="status" name="status">
+
+            <label for="created_date">Created Date:</label>
+            <input type="date" id="created_date" name="created_date">
+
+            <label for="created_by">Created By:</label>
+            <input type="text" id="created_by" name="created_by">
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <!-- ROOM_TYPE Form -->
+        <h2>Room Type Information</h2>
+        <form action="/add_room_type" method="POST">
+            <label for="room_type_id">Room Type ID:</label>
+            <input type="text" id="room_type_id" name="room_type_id" required>
+
+            <label for="no_of_bed">Number of Beds:</label>
+            <input type="number" id="no_of_bed" name="no_of_bed" required>
+
+            <label for="type_name">Type Name:</label>
+            <input type="text" id="type_name" name="type_name" required>
+
+            <label for="status">Status:</label>
+            <input type="text" id="status" name="status">
+
+            <label for="created_date">Created Date:</label>
+            <input type="date" id="created_date" name="created_date">
+
+            <label for="created_by">Created By:</label>
+            <input type="text" id="created_by" name="created_by">
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <!-- BOOKING Form -->
+        <h2>Booking Information</h2>
+        <form action="/add_booking" method="POST">
+            <label for="booking_id">Booking ID:</label>
+            <input type="text" id="booking_id" name="booking_id" required>
+
+            <label for="room_id">Room ID:</label>
+            <input type="text" id="room_id" name="room_id" required>
+
+            <label for="customer_id">Customer ID:</label>
+            <input type="text" id="customer_id" name="customer_id" required>
+
+            <label for="check_in">Check-in Date:</label>
+            <input type="date" id="check_in" name="check_in" required>
+
+            <label for="check_out">Check-out Date:</label>
+            <input type="date" id="check_out" name="check_out" required>
+
+            <label for="status">Status:</label>
+            <input type="text" id="status" name="status">
+
+            <label for="phone_no">Phone Number:</label>
+            <input type="text" id="phone_no" name="phone_no" required>
+
+            <label for="identity_type">Identity Type:</label>
+            <input type="text" id="identity_type" name="identity_type">
+
+            <label for="created_date">Created Date:</label>
+            <input type="date" id="created_date" name="created_date">
+
+            <label for="created_by">Created By:</label>
+            <input type="text" id="created_by" name="created_by">
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <!-- CUSTOMER Form -->
+        <h2>Customer Information</h2>
+        <form action="/add_customer" method="POST">
+            <label for="customer_id">Customer ID:</label>
+            <input type="text" id="customer_id" name="customer_id" required>
+
+            <label for="customer_name">Customer Name:</label>
+            <input type="text" id="customer_name" name="customer_name" required>
+
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" required>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="post_code">Post Code:</label>
+            <input type="text" id="post_code" name="post_code">
+
+            <label for="mobile_name">Mobile Number:</label>
+            <input type="text" id="mobile_name" name="mobile_name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="status">Status:</label>
+            <input type="text" id="status" name="status">
+
+            <label for="created_date">Created Date:</label>
+            <input type="date" id="created_date" name="created_date">
+
+            <label for="created_by">Created By:</label>
+            <input type="text" id="created_by" name="created_by">
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <!-- BILL_MASTER Form -->
+        <h2>Bill Master Information</h2>
+        <form action="/add_bill_master" method="POST">
+            <label for="bill_id">Bill ID:</label>
+            <input type="text" id="bill_id" name="bill_id" required>
+
+            <label for="booking_id">Booking ID:</label>
+            <input type="text" id="booking_id" name="booking_id" required>
+
+            <label for="bill_date">Bill Date:</label>
+            <input type="date" id="bill_date" name="bill_date" required>
+
+            <label for="status">Status:</label>
+            <input type="text" id="status" name="status">
+
+            <label for="created_date">Created Date:</label>
+            <input type="date" id="created_date" name="created_date">
+
+            <label for="created_by">Created By:</label>
+            <input type="text" id="created_by" name="created_by">
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <!-- PAYMENT Form -->
+        <h2>Payment Information</h2>
+        <form action="/add_payment" method="POST">
+            <label for="payment_id">Payment ID:</label>
+            <input type="text" id="payment_id" name="payment_id" required>
+
+            <label for="bill_id">Bill ID:</label>
+            <input type="text" id="bill_id" name="bill_id" required>
+
+            <label for="payment_date">Payment Date:</label>
+            <input type="date" id="payment_date" name="payment_date" required>
+
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" required>
+
+            <label for="status">Status:</label>
+            <input type="text" id="status" name="status">
+
+            <label for="created_date">Created Date:</label>
+            <input type="date" id="created_date" name="created_date">
+
+            <label for="created_by">Created By:</label>
+            <input type="text" id="created_by" name="created_by">
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <!-- BILL_DETAILS Form -->
+        <h2>Bill Details Information</h2>
+        <form action="/add_bill_details" method="POST">
+            <label for="bill_details_id">Bill Details ID:</label>
+            <input type="text" id="bill_details_id" name="bill_details_id" required>
+
+            <label for="bill_id">Bill ID:</label>
+            <input type="text" id="bill_id" name="bill_id" required>
+
+            <label for="item">Item:</label>
+            <input type="text" id="item" name="item" required>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" required>
+
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" required>
+
+            <label for="status">Status:</label>
+            <input type="text" id="status" name="status">
+
+            <label for="created_date">Created Date:</label>
+            <input type="date" id="created_date" name="created_date">
+
+            <label for="created_by">Created By:</label>
+            <input type="text" id="created_by" name="created_by">
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <!-- SERVICES Form -->
+        <h2>Services Information</h2>
+        <form action="/add_services" method="POST">
+            <label for="service_id">Service ID:</label>
+            <input type="text" id="service_id" name="service_id" required>
+
+            <label for="service_name">Service Name:</label>
+            <input type="text" id="service_name" name="service_name" required>
+
+            <label for="service_charge">Service Charge:</label>
+            <input type="number" id="service_charge" name="service_charge" required>
+
+            <label for="status">Status:</label>
+            <input type="text" id="status" name="status">
+
+            <label for="created_date">Created Date:</label>
+            <input type="date" id="created_date" name="created_date">
+
+            <label for="created_by">Created By:</label>
+            <input type="text" id="created_by" name="created_by">
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <!-- ADVANCE Form -->
+        <h2>Advance Payment Information</h2>
+        <form action="/add_advance" method="POST">
+            <label for="advance_id">Advance ID:</label>
+            <input type="text" id="advance_id" name="advance_id" required>
+
+            <label for="booking_id">Booking ID:</label>
+            <input type="text" id="booking_id" name="booking_id" required>
+
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" required>
+
+            <label for="payment_date">Payment Date:</label>
+            <input type="date" id="payment_date" name="payment_date" required>
+
+            <label for="status">Status:</label>
+            <input type="text" id="status" name="status">
+
+            <label for="created_date">Created Date:</label>
+            <input type="date" id="created_date" name="created_date">
+
+            <label for="created_by">Created By:</label>
+            <input type="text" id="created_by" name="created_by">
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

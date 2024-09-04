@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Information Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #2980b9, #6dd5fa); /* Blue gradient background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .form-container h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #2980b9;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="date"],
+        .form-container input[type="email"],
+        .form-container input[type="number"],
+        .form-container select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .form-container input[type="submit"],
+        .form-container .back-button {
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        .form-container input[type="submit"]:hover,
+        .form-container .back-button:hover {
+            background-color: #1c5984;
+        }
+
+        .form-container .back-button {
+            background-color: #e74c3c;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .form-container .back-button:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Employee Information</h2>
+        <form action="add_employee.php" method="POST">
+            <label for="emp_id">Employee ID:</label>
+            <input type="text" id="emp_id" name="emp_id" required>
+
+            <label for="emp_name">Employee Name:</label>
+            <input type="text" id="emp_name" name="emp_name" required>
+
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" required>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address">
+
+            <label for="status">Status:</label>
+            <input type="text" id="status" name="status">
+
+            <label for="nationality">Nationality:</label>
+            <input type="text" id="nationality" name="nationality">
+
+            <label for="created_date">Created Date:</label>
+            <input type="date" id="created_date" name="created_date">
+
+            <label for="created_by">Created By:</label>
+            <input type="text" id="created_by" name="created_by">
+
+            <label for="dept_id">Department ID:</label>
+            <input type="text" id="dept_id" name="dept_id">
+
+            <label for="job_id">Job ID:</label>
+            <input type="text" id="job_id" name="job_id">
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="marital_status">Marital Status:</label>
+            <input type="text" id="marital_status" name="marital_status">
+
+            <input type="submit" value="Submit">
+            <a href="javascript:history.back()" class="back-button">Back</a>
+        </form>
+    </div>
+</body>
+</html>
